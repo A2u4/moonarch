@@ -1,0 +1,15 @@
+// moonarch fastfetch: BlackArch logo (gray sword), black and white text
+{
+    "logo": {
+        "source": "blackarch",                                      // fastfetch's own BlackArch logo
+        "color": { "1": "white", "2": "white", "3": "light_black" } // 3 = the sword = gray
+    },
+    "display": {
+        "color": { "keys": "white", "title": "white" }   // no colors in the text either
+    },
+    "modules": [
+        "title", "separator",
+        "os", "kernel", "uptime", "packages", "shell",
+        "wm", "terminal", "cpu", "gpu", "memory", "disk"
+    ]
+}

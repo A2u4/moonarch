@@ -1,0 +1,52 @@
+// moonarch top bar: Omarchy's layout, but TEXT only (no icons).
+// Wifi name only shows on mouse hover (tooltip).
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 26,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "pulseaudio"],
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{name}",                         // just the number
+        "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] }
+    },
+
+    "clock": {
+        "format": "{:L%A %H:%M}",                   // Friday 03:27
+        "format-alt": "{:L%d %B %Y}",               // click: 27 November 2026
+        "tooltip": false
+    },
+
+    "bluetooth": {
+        "format": "bt",
+        "format-off": "bt off",
+        "format-disabled": "bt off",
+        "format-connected": "bt on",
+        "tooltip-format": "Devices connected: {num_connections}",
+        "on-click": "foot -e bluetui"               // Omarchy uses bluetui too
+    },
+
+    "network": {
+        "format-wifi": "wifi",                      // no network name here
+        "format-ethernet": "wired",
+        "format-disconnected": "no wifi",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+        "interval": 3,
+        "on-click": "foot -e impala"                // Omarchy uses impala
+    },
+
+    "pulseaudio": {
+        "format": "vol {volume}%",
+        "format-muted": "muted",
+        "tooltip-format": "Playing at {volume}%",
+        "scroll-step": 5,                           // mouse wheel: +/- 5%
+        "on-click": "foot -e wiremix",              // Omarchy uses wiremix
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+}

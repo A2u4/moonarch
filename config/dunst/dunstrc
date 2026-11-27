@@ -1,0 +1,28 @@
+# moonarch notifications: small, black and white
+
+[global]
+    width = 260                  # small
+    height = (0, 100)
+    origin = top-right           # top right corner
+    offset = (10, 34)            # 34 = below the bar
+    font = Monospace 9
+    padding = 6
+    horizontal_padding = 8
+    frame_width = 1
+    frame_color = "#888888"      # thin gray border, like the windows
+    corner_radius = 0
+    format = "<b>%s</b>  [x]\n%b"   # title  [x]  then the message
+    mouse_left_click = close_current  # click it = close it
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#808080"
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#ffffff"
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"      # important ones get a white border

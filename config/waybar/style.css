@@ -1,0 +1,32 @@
+/* moonarch: black and white bar, layout copied from Omarchy */
+@define-color background #000000;
+@define-color foreground #ffffff;
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';   /* the font with the icons */
+  font-size: 12px;
+}
+
+.modules-left  { margin-left: 8px; }
+.modules-right { margin-right: 8px; }
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty  { opacity: 0.5; }   /* empty workspaces look gray */
+#workspaces button.active { text-decoration: underline; }   /* where you are */
+
+#pulseaudio { min-width: 12px; margin: 0 7.5px; }
+#bluetooth  { margin-right: 17px; }
+#network    { margin-right: 13px; }
+#clock      { margin-left: 8.75px; }
+tooltip     { padding: 2px; }
